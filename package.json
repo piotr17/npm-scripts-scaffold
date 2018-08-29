@@ -1,0 +1,35 @@
+{
+    "name": "ac-matteo",
+    "version": "0.0.9",
+    "description": "Base guida per Matteo",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass --output-style compressed -o src/assets/css src/assets/sass",
+        "scss-dist": "node-sass --output-style compressed -o src/assets/css dist/assets/sass",
+        "autoprefixer": "postcss -u autoprefixer -r src/assets/css/*",
+        "lint": "eslint src/assets/js",
+        "imagemin": "imagemin src/assets/img dist/assets/img -p",
+        "say-hello": "echo 'Hello World'",
+        "serve": "browser-sync start --server \"./src\"  --files \"src/*.html, src/assets/css/*.css, src/assets/js/*.js\"",
+        "bootlint": "bootlint src/index.html",
+        "build:css": "npm run scss && npm run autoprefixer",
+        "build:js": "npm run lint",
+        "build:all": "npm run build:css",
+        "watch:all": "onchange \"src/assets/js/*.js\" \"src/assets/sass/*.scss\" -- npm run build:all ",
+        "serve:all": "parallelshell \"npm run serve\" \"npm run watch:all\""
+    },
+    "author": "Luca Ricci",
+    "license": "MIT",
+    "devDependencies": {
+        "autoprefixer": "^9.0.2",
+        "bootlint": "^0.14.2",
+        "browser-sync": "^2.24.6",
+        "eslint": "^5.2.0",
+        "imagemin-cli": "^3.0.0",
+        "node-sass": "^4.9.2",
+        "onchange": "^4.1.0",
+        "parallelshell": "^3.0.2",
+        "postcss-cli": "^6.0.0"
+    }
+}
