@@ -13,9 +13,10 @@
         "say-hello": "echo 'Hello World'",
         "serve": "browser-sync start --server \"./src\"  --files \"src/*.html, src/assets/css/*.css, src/assets/js/*.js\"",
         "bootlint": "bootlint src/index.html",
-        "build:css": "npm run scss && npm run autoprefixer",
-        "build:js": "npm run lint",
-        "build:all": "npm run build:css",
+        "prebuild:css": "npm run scss && npm run autoprefixer",
+        "prebuild:js": "npm run lint",
+        "prebuild:all": "npm run prebuild:css",
+        "build:all": "npm run scss-dist",
         "watch:all": "onchange \"src/assets/js/*.js\" \"src/assets/sass/*.scss\" -- npm run build:all ",
         "serve:all": "parallelshell \"npm run serve\" \"npm run watch:all\""
     },
@@ -25,11 +26,15 @@
         "autoprefixer": "latest",
         "bootlint": "latest",
         "browser-sync": "latest",
+        "cssmin": "^0.4.3",
         "eslint": "latest",
         "imagemin-cli": "latest",
         "node-sass": "latest",
         "onchange": "latest",
         "parallelshell": "latest",
         "postcss-cli": "latest"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1"
     }
 }
