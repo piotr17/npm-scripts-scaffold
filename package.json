@@ -1,5 +1,5 @@
 {
-    "name": "ac-matteo",
+    "name": "NpmScriptsScaffold",
     "version": "0.0.9",
     "description": "Base guida per Matteo",
     "main": "index.html",
@@ -15,26 +15,28 @@
         "bootlint": "bootlint src/index.html",
         "prebuild:css": "npm run scss && npm run autoprefixer",
         "prebuild:js": "npm run lint",
-        "prebuild:all": "npm run prebuild:css",
-        "build:all": "npm run scss-dist",
-        "watch:all": "onchange \"src/assets/js/*.js\" \"src/assets/sass/*.scss\" -- npm run build:all ",
+        "prebuild:all": "npm run prebuild:css && npm run prebuild:js",
+        "watch:all": "onchange \"src/assets/js/*.js\" \"src/assets/sass/*.scss\" -- npm run prebuild:all ",
         "serve:all": "parallelshell \"npm run serve\" \"npm run watch:all\""
     },
     "author": "Luca Ricci",
     "license": "MIT",
     "devDependencies": {
-        "autoprefixer": "latest",
-        "bootlint": "latest",
-        "browser-sync": "latest",
+        "autoprefixer": "^9.5.1",
+        "bootlint": "^0.16.6",
+        "browser-sync": "^2.26.5",
         "cssmin": "^0.4.3",
-        "eslint": "latest",
+        "eslint": "^5.16.0",
         "imagemin-cli": "latest",
-        "node-sass": "latest",
-        "onchange": "latest",
+        "node-sass": "^4.12.0",
+        "onchange": "^6.0.0",
         "parallelshell": "latest",
-        "postcss-cli": "latest"
+        "postcss-cli": "latest",
+        "webpack": "^4.32.2",
+        "webpack-cli": "^3.3.2"
     },
     "dependencies": {
-        "bootstrap": "^4.3.1"
+        "bootstrap": "^4.3.1",
+        "chart.js": "^2.8.0"
     }
 }
