@@ -28,7 +28,7 @@
         "cssmin": "^0.4.3",
         "eslint": "^5.16.0",
         "imagemin-cli": "latest",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.1",
         "onchange": "^6.0.0",
         "parallelshell": "latest",
         "postcss-cli": "latest",
